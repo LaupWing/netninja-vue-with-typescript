@@ -1,6 +1,7 @@
 <template>
    <div class="app">
-      
+      <p>{{name}}</p>
+      <button @click="changeName('zelda')">Change Name</button>
    </div>
 </template>
 
@@ -14,6 +15,11 @@ export default defineComponent({
    data(){
       return{
          name: 'Link'
+      }
+   },
+   methods:{
+      changeName(name: string){
+         this.name = name
       }
    }
 });
