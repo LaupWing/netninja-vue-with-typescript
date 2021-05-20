@@ -11,6 +11,11 @@ export default defineComponent({
    name: "App",
    components: {
    },
+   data(){
+      return{
+         name: 'Link'
+      }
+   }
 });
 </script>
 
