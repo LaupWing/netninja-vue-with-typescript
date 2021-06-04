@@ -2,16 +2,20 @@
    <div class="app">
       <p>{{ name }}</p>
       <button @click="changeName('zelda')">Change Name</button>
+      <JobList :jobs="jobs"/>
    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, ref } from "vue";
 import Job from "./types/Job";
+import JobList from './components/JobList.vue'
 
 export default defineComponent({
    name: "App",
-   components: {},
+   components: {
+      JobList
+   },
    setup() {
       const state = reactive({
          name: "Link",
@@ -47,6 +51,7 @@ export default defineComponent({
       ]);
       return {
          ...toRefs(state),
+         jobs
       };
    },
    data() {
